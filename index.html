@@ -19,7 +19,7 @@
       <main class="container">
         <section id="album-container">
           <div class="card" v-for="(album,index) in albums">
-            <img :src="album.poster" alt="New Jersey" />
+            <img :src="album.poster" alt="album.title" />
             <h2 class="title">{{album.title}}</h2>
             <address class="author">{{album.author}}</address>
             <time datetime="1988" class="year">{{album.year}}</time>
