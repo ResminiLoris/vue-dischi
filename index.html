@@ -14,12 +14,16 @@
       <header>
         <div class="container">
           <img src="images/logo.png" />
+          <select v-model="selectedGenre">
+            <option>All</option>
+            <option v-for="genre in genreList">{{genre}}</option>
+          </select>
         </div>
       </header>
       <main class="container">
         <section id="album-container">
-          <div class="card" v-for="(album,index) in albums">
-            <img :src="album.poster" alt="album.title" />
+          <div class="card" v-for="(album,index) in filteredAlbums">
+            <img :src="album.poster" :alt="album.title" />
             <h2 class="title">{{album.title}}</h2>
             <address class="author">{{album.author}}</address>
             <time datetime="1988" class="year">{{album.year}}</time>
